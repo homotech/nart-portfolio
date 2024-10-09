@@ -2,6 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Young+Serif&display=swap");
+
+:root {
+  --chinese-white: #def3e0;
+  --crayola: #b2e67a;
+  --go-green: #00ab62;
+  --phthalo-green: #12332a;
+  --smoky-black: #0d0d0d;
+}
+/* Fonts  */
+@font-face {
+  font-family: "br-firma-light";
+  src: url("/br-firma/br-firma-light.woff") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "br-firma-regular";
+  src: url("/br-firma/br-firma-regular.woff") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "br-firma-bold";
+  src: url("/br-firma/br-firma-bold.woff") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "br-firma-semibold";
+  src: url("/br-firma/br-firma-semibold.woff") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-  background-color: #183028;
+  font-family: "br-firma-regular", sans-serif;
+  background-color: var(--smoky-black);
+}
+
+.brf-regular {
+}
+.chinese-white {
+  color: var(--chinese-white);
+}
+.go-green {
+  color: var(--go-green);
+}
+.crayola {
+  color: var(--crayola);
+}
+.phthalo-green {
+  color: var(--phthalo-green);
+}
+.smoky-black {
+  color: var(--smoky-black);
+}
+.bg-chinese-white {
+  background-color: var(--chinese-white);
+}
+.bg-go-green {
+  background-color: var(--go-green);
+}
+.bg-crayola {
+  background-color: var(--crayola);
+}
+.bg-phthalo-green {
+  background-color: var(--phthalo-green);
+}
+.bg-smoky-black {
+  background-color: var(--smoky-black);
 }

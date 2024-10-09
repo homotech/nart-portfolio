@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "br-firma-light": ['"br-firma-light"', "sans-serif"],
+        "br-firma-regular": ['"br-firma-regular"', "sans-serif"],
+        "br-firma-bold": ['"br-firma-bold"', "sans-serif"],
+        "br-firma-semibold": ['"br-firma-semibold"', "sans-serif"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

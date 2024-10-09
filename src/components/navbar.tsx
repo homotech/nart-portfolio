@@ -5,54 +5,76 @@ import Image from "next/image";
 import Logo from "@/public/nart-logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import AnimatedHamburger from "./animatedHamburger";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  //   const [isLaptop, setIsLaptop] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
 
-  const navLinks = [
-    {
-      href: "/work",
-      label: "Works",
-      className: "py-4  mb-4 xl:mb-0 px-4 hover:font-bold",
-    },
-    {
-      href: "/about",
-      label: "About Me",
-      className: "py-4  mb-4 xl:mb-0 px-4 hover:font-bold",
-    },
-    {
-      href: "/blog",
-      label: "Read My Blog",
-      className: "py-4  mb-4 xl:mb-0 px-4 hover:font-bold",
-    },
-    {
-      href: "/contact-us",
-      label: "Contact Us",
-      className: "py-4  mb-4 xl:mb-0 px-4 hover:font-bold",
-    },
-    {
-      href: "/publish",
-      label: "Publish a Blog",
-      className: "py-4  mb-4 xl:mb-0 px-4 hover:font-bold",
-    },
-  ];
+  const toggleMenu = () => {
+    if (isMenuOpen) {
+      setMenuVisible(false);
+      setTimeout(() => setIsMenuOpen(false), 300);
+    } else {
+      setIsMenuOpen(true);
+      setTimeout(() => setMenuVisible(true), 50);
+    }
+    setIsMenuOpen(!isMenuOpen);
+  };
+  useEffect(() => {
+    const handClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+      if (isMenuOpen && !target.closest("nav") && !target.closest("button")) {
+        toggleMenu();
+      }
+    };
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-  //   useEffect(() => {
-  //     const handleResize = () => {
-  //       const width = window.innerWidth;
-  //       setIsLaptop(width >= 1023);
-  //       setIsOpen(true);
-  //     };
-  //     window.addEventListener("resize", handleResize);
-  //     handleResize();
-  //     return () => window.addEventListener("resize", handleResize);
-  //   }, []);
-
-  //   isLaptop ? isOpen : !isOpen;
+    document.addEventListener("mousedown", handClickOutside);
+    return () => document.removeEventListener("mousedown", handClickOutside);
+  }, [isMenuOpen, toggleMenu]);
   return (
-    <nav>
+    <header className="p-4 flex justify-between items-center">
+      <div className="logo">
+        <Link href={"/"}>
+          <Image
+            src={Logo}
+            alt="Nart The Designer logo"
+            width={50}
+            height={20}
+            // layout="responsive"
+          />
+        </Link>
+      </div>
+      <div className="z-50 relative">
+        <AnimatedHamburger isOpen={isMenuOpen} toggle={toggleMenu} />
+      </div>
+
+      {isMenuOpen && (
+        <nav
+          className={`fixed inset-0 bg-smoky-black z-40 transition-opacity duration-300 ease-in-out flex items-center justify-center ${
+            menuVisible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <ul className="text-center">
+            {["About", "Portfolio", "Say Hello", "Blog"].map((item) => (
+              <li key={item} className="my-4">
+                <Link
+                  href={`/${item.toLowerCase().replace(" ", "-")}`}
+                  className="text-2xl crayola"
+                  onClick={() => toggleMenu()}
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+      {/* <div>
+        <Link href={"/"} className="">
+          Home
+        </Link>
+      </div>
       <div className="sticky nav-container flex-col lg:flex-row lg:justify-between  flex px-4 py-4 xl:items-center">
         <div className="flex justify-between mb-8 lg:mb-0 xl:mb-0 lg:w-1/4 xl:w-1/4 ">
           <Link href={"/"} className="">
@@ -70,7 +92,7 @@ const Navbar = () => {
             <button onClick={toggleMenu} className="text-2xl">
               {
                 <FontAwesomeIcon
-                  icon={isOpen ? faXmark : faBars}
+                  icon={isMenuOpen ? faXmark : faBars}
                   className=""
                 />
               }
@@ -104,15 +126,15 @@ const Navbar = () => {
             <li className="py-4  mb-4 xl:mb-0 px-4 hover:font-bold">
               <Link href={"/contact-us"}>Contact Us</Link>
             </li> */}
-          </ul>
+      {/* </ul>
           <div className="w-full lg:w-1/3 lg:h-full xl:h-full">
             <button className="bg-black text-white w-full xl:h-full rounded px-4 py-4 rounded-xl">
               Reach out
             </button>
           </div>
         </div>
-      </div>
-    </nav>
+      </div>  */}
+    </header>
   );
 };
 export default Navbar;
