@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Logo from "@/public/nart-logo.svg";
 import AnimatedHamburger from "./animatedHamburger";
 
