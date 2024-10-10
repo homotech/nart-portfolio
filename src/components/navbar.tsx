@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/nart-logo.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import AnimatedHamburger from "./animatedHamburger";
 
 const Navbar = () => {
@@ -23,7 +21,7 @@ const Navbar = () => {
   };
   useEffect(() => {
     const handClickOutside = (event: MouseEvent) => {
-      const target = event.target as Node;
+      const target = event.target as HTMLElement;
       if (isMenuOpen && !target.closest("nav") && !target.closest("button")) {
         toggleMenu();
       }
@@ -33,7 +31,7 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handClickOutside);
   }, [isMenuOpen, toggleMenu]);
   return (
-    <header className="p-4 flex justify-between items-center">
+    <header className="p-4 flex border-2 justify-between items-center">
       <div className="logo">
         <Link href={"/"}>
           <Image

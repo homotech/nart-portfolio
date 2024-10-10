@@ -9,7 +9,7 @@ export default function Home() {
         <h3 className="chinese-white text-2xl font-br-firma-light text-center">
           Nice to meet you!
         </h3>
-        <h1 className="crayola text-5xl font-br-firma-semibold text-center">
+        <h1 className="crayola text-5xl font-br-firma-light text-center">
           I'm Daniel.
         </h1>
         <p className="text-white font-br-firma-light text-center">
