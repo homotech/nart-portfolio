@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/navbar";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import Footer from "../components/footer";
 // import "@fortawesome/fontawesome-free/css/all.css";
 
 // Prevent automatic CSS injection by Font Awesome
@@ -28,6 +29,7 @@ export default function RootLayout({
             <Navbar />
           </header>
           <main>{children}</main>
+          <Footer />
         </div>
       </body>
     </html>

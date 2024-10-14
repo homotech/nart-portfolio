@@ -31,8 +31,8 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handClickOutside);
   }, [isMenuOpen, toggleMenu]);
   return (
-    <header className="p-4 flex border-2 justify-between items-center">
-      <div className="logo">
+    <header className="p-4 overflow-hidden flex justify-between">
+      <div className="logo w-2/12 mt-1">
         <Link href={"/"}>
           <Image
             src={Logo}
@@ -43,7 +43,7 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      <div className="z-50 relative">
+      <div className="w-6 z-50 relative">
         <AnimatedHamburger isOpen={isMenuOpen} toggle={toggleMenu} />
       </div>
 

@@ -36,9 +36,11 @@ export default function Reviews() {
       {reviews.length > 0 ? (
         <ul>
           {reviews.map((review) => (
-            <li key={review.id}>
-              <strong>Project name:</strong>
-              {review.projectId}
+            <li
+              key={review.id}
+              className="border border-off-black border-radius-4"
+            >
+              <h1 className="text-crayola text-xl">{review.projectId}</h1>
               <br />
               <strong>Rating:</strong>
               {review.rating}

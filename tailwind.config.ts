@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        "chinese-white": "#def3e0",
+        crayola: "#b2e67a",
+        "go-green": "#00ab62",
+        "phthalo-green": "#12332a",
+        "smoky-black": "#0d0d0d",
+        "off-black": "#252525",
+      },
       fontFamily: {
         "br-firma-light": ['"br-firma-light"', "sans-serif"],
         "br-firma-regular": ['"br-firma-regular"', "sans-serif"],

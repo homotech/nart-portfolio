@@ -8,7 +8,7 @@ const AnimatedHamburger: React.FC<AnimatedHamburgerProps> = ({
   toggle,
 }) => {
   return (
-    <button onClick={toggle}>
+    <button onClick={toggle} className="relative">
       <span
         className={`absolute h-0.5 w-6 bg-crayola transition-all duration-300 ease-in-out ${
           isOpen ? "rotate-45" : "-translate-y-1"
