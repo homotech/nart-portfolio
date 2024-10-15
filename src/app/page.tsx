@@ -2,6 +2,7 @@
 import Image from "next/legacy/image";
 import Reviews from "../components/reviews";
 import BackToTop from "../components/backToTop";
+import SayHello from "../components/sayHello";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       </div>
       Hello World
       <Reviews />
+      <SayHello />
       <BackToTop />
     </div>
   );

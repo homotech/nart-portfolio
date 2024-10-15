@@ -4,7 +4,7 @@ import NartLogo from "../../public/nartlogo.svg";
 export default function Footer() {
   return (
     <footer className="mt-4">
-      <div className="flex gap-4 mx-4">
+      <div className="flex gap-6 mx-4">
         <div>
           <Image
             src={NartLogo}
@@ -37,6 +37,11 @@ export default function Footer() {
               {
                 id: 4,
                 socialmedia: "LinkedIn",
+                link: "https://www.linkedin.com/in/daniel-adonis-6485b7202/",
+              },
+              {
+                id: 5,
+                socialmedia: "Behance",
                 link: "https://www.linkedin.com/in/daniel-adonis-6485b7202/",
               },
             ].map((item) => (
