@@ -32,6 +32,12 @@ const Navbar = () => {
   }, [isMenuOpen, toggleMenu]);
   return (
     <header className="p-4 overflow-hidden flex justify-between">
+      <div>
+        <span></span>
+      </div>
+      <div>
+        <Link href="/">Daniel Adonis</Link>
+      </div>
       <div className="logo w-2/12 mt-1">
         <Link href={"/"}>
           <Image
@@ -53,12 +59,12 @@ const Navbar = () => {
             menuVisible ? "opacity-100" : "opacity-0"
           }`}
         >
-          <ul className="text-center">
+          <ul className="text-center ">
             {["About", "Portfolio", "Say Hello", "Blog"].map((item) => (
               <li key={item} className="my-4">
                 <Link
                   href={`/${item.toLowerCase().replace(" ", "-")}`}
-                  className="text-2xl crayola"
+                  className="text-2xl font-br-firma-light text-chinese-white hover:text-crayola"
                   onClick={() => toggleMenu()}
                 >
                   {item}

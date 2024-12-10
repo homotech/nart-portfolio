@@ -15,6 +15,12 @@
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+@font-face {
+  font-family: "br-firma-thin";
+  src: url("/br-firma/br-firma-thin.woff") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: "br-firma-light";
@@ -42,7 +48,7 @@
 }
 body {
   font-family: "br-firma-regular", sans-serif;
-  background-color: var(--smoky-black);
+  /* background-color: var(--smoky-black); */
 }
 
 .chinese-white {

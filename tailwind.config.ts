@@ -8,6 +8,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // opacity: ["responsive", "hover", "focus"],
+      // transform: ["responsive", "hover", "focus"],
       colors: {
         "chinese-white": "#def3e0",
         crayola: "#b2e67a",
@@ -15,8 +17,10 @@ const config: Config = {
         "phthalo-green": "#12332a",
         "smoky-black": "#0d0d0d",
         "off-black": "#252525",
+        grey: "#818181",
       },
       fontFamily: {
+        "br-firma-thin": ['"br-firma-thin"', "sans-serif"],
         "br-firma-light": ['"br-firma-light"', "sans-serif"],
         "br-firma-regular": ['"br-firma-regular"', "sans-serif"],
         "br-firma-bold": ['"br-firma-bold"', "sans-serif"],
