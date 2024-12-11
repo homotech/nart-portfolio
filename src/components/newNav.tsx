@@ -4,9 +4,9 @@ import Link from "next/link";
 import { escape } from "querystring";
 
 const navLinkClass =
-  "transition duration-300 hover:text-neutral-500 text-white font-br-firma-regular text-5xl block";
+  "transition duration-300 hover:text-neutral-500 text-white font-br-firma-regular text-5xl md:text-6xl block";
 const smLinkClass =
-  "transition duration-300 hover:text-neutral-500 text-white font-br-firma-semibold text-xl block";
+  "transition duration-300 hover:text-neutral-500 text-white font-br-firma-semibold text-base md:text-2xl block";
 const navLinks = [
   {
     id: 1,
@@ -60,12 +60,9 @@ const NewNav = () => {
 
   return (
     <header className="w-full">
-      <nav
-        className="flex justify-between items-center max-w-7xl relative"
-        role="navigation"
-      >
+      <nav className="relative " role="navigation">
         {/* The button */}
-        <div className="absolute top-0 right-0 z-50 p-4">
+        <div className={`absolute px-4 md:px-8 lg:px-16 top-1/3 right-0 z-50`}>
           <button
             className={"space-y-1.5 group"}
             onClick={() => setIsOpen(!isOpen)}
@@ -76,7 +73,11 @@ const NewNav = () => {
                 isOpen ? "rotate-45 translate-y-2 bg-white" : "bg-black"
               }`}
             ></div>
-            <div className={`w-6 h-0.5 transition-all bg-black`}></div>
+            <div
+              className={`w-6 h-0.5 transition-all bg-black ${
+                isOpen ? "opacity-0" : "opacity-100"
+              }`}
+            ></div>
             <div
               className={`w-6 h-0.5 transition-all ${
                 isOpen ? "-rotate-45 -translate-y-2 bg-white" : "bg-black"
@@ -87,10 +88,10 @@ const NewNav = () => {
         {/* End of the button */}
 
         {/* The name on the header  */}
-        <div className={`p-4 w-full item-center`}>
+        <div className={`p-4 w-full`}>
           <Link
             href="/"
-            className="text-base text-center font-br-firma-semibold block"
+            className="text-sm md:text-base lg:text-xl text-center font-br-firma-regular block"
           >
             Daniel Adonis
           </Link>
@@ -101,7 +102,7 @@ const NewNav = () => {
 
         <div
           id="mobile-menu"
-          className={`fixed top-0 left-0 w-full h-full bg-black p-4 z-40 inset-0 transform transition-transform duration-500 ease-in-out ${
+          className={` fixed top-0 left-0 w-full h-full md:px-8 lg:px-16 bg-black p-4 z-40 inset-0 transform transition-transform duration-500 ease-in-out ${
             isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
           //   style={{ display: isOpen ? "block" : "none" }}
@@ -139,7 +140,7 @@ const NewNav = () => {
                   key={item.id}
                   onClick={closeMenu}
                 >
-                  <h3>{item.navLink}</h3>
+                  {item.navLink}
                 </Link>
               ))}
             </ul>
