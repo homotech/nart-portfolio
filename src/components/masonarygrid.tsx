@@ -32,13 +32,16 @@ const MasonryGrid = () => {
   }, []);
 
   return (
-    <div className="grid w-full border border-red-500 md:px-16">
-      <div className="grid-sizer w-1/2 md:w-1/4 lg:w-1/5"></div>
+    <div className="box-border grid w-full border border-red-700 grid-cols-auto-fit ">
+      <div className="grid-sizer sm:w-1/3 md:w-1/3"></div>
       {Images.map((item) => (
-        <div className="grid-item w-1/2 md:w-1/4 lg:w-1/5 mb-4" key={item.id}>
+        <div
+          className="grid-item sm:w-1/2 lg:w-1/3 mb-8 md:hover:scale-105 transition transition-scale ease-in-out"
+          key={item.id}
+        >
           <div className="rounded-lg overflow-hidden">
             <Link href="/">
-              <Image src={item.image} alt={item.alt}></Image>
+              <Image src={item.image} alt={item.alt} className="w-full"></Image>
             </Link>
           </div>
           <p className="font-br-firma-semibold">Project Name</p>
