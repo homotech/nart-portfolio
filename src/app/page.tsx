@@ -8,7 +8,7 @@ import TailwindMasonry from "../components/tailwindMasonry";
 
 export default function Home() {
   return (
-    <div className="p-4 md:p-16">
+    <div className="px-4 py-2 md:py-4 md:px-16">
       <TailwindMasonry />
       {/* <MasonryGrid /> */}
       {/* <div className="mx-6">

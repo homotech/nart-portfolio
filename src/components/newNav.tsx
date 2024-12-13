@@ -44,7 +44,28 @@ const smLinks = [
 
 const NewNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -54,15 +75,23 @@ const NewNav = () => {
     };
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
-      return () => document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.removeEventListener("keydown", handleEscape);
+        document.body.style.overflow = "unset";
+      };
     }
   }, [isOpen]);
 
   return (
-    <header className="w-full">
-      <nav className="relative " role="navigation">
+    <header
+      className={`w-full fixed top-0 left-0 z-50 bg-white transform transition-transform duration-300 ${
+        isVisible || isOpen ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <nav className="relative" role="navigation">
         {/* The button */}
-        <div className={`absolute px-4 md:px-8 lg:px-16 top-1/3 right-0 z-50`}>
+        <div className={`absolute px-4 md:px-8 lg:px-16 top-1/3 right-0 z-50 `}>
           <button
             className={"space-y-1.5 group"}
             onClick={() => setIsOpen(!isOpen)}
@@ -91,7 +120,7 @@ const NewNav = () => {
         <div className={`p-4 w-full`}>
           <Link
             href="/"
-            className="text-sm md:text-base lg:text-xl text-center font-br-firma-regular block"
+            className="text-base lg:text-xl text-center font-br-firma-regular block"
           >
             Daniel Adonis
           </Link>
@@ -102,48 +131,50 @@ const NewNav = () => {
 
         <div
           id="mobile-menu"
-          className={` fixed top-0 left-0 w-full h-full md:px-8 lg:px-16 bg-black p-4 z-40 inset-0 transform transition-transform duration-500 ease-in-out ${
+          className={`fixed top-0 left-0 w-full h-full md:px-8 lg:px-16 bg-black p-4 z-40 inset-0 transform transition-transform duration-500 ease-in-out ${
             isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
           //   style={{ display: isOpen ? "block" : "none" }}
           aria-hidden={!isOpen}
         >
-          <div className="h-3/4 overflow-y-auto">
-            <h3 className="text-white uppercase text-xs font-br-firma-semibold mt-10">
-              Menu
-            </h3>
-            <ul className="space-y-4 mt-4">
-              {navLinks.map((item) => (
-                <Link
-                  href={item.link}
-                  rel="noopener noreferrer"
-                  className={navLinkClass}
-                  onClick={closeMenu}
-                  key={item.id}
-                >
-                  {item.navLink}
-                </Link>
-              ))}
-            </ul>
-          </div>
-          <div className="mt-auto">
-            <h3 className="text-white uppercase text-xs font-br-firma-semibold mt-10">
-              Follow
-            </h3>
-            <ul className="mt-4">
-              {smLinks.map((item) => (
-                <Link
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={smLinkClass}
-                  key={item.id}
-                  onClick={closeMenu}
-                >
-                  {item.navLink}
-                </Link>
-              ))}
-            </ul>
+          <div className="min-h-screen flex flex-col">
+            <div className="flex-grow">
+              <h3 className="text-white uppercase text-xs font-br-firma-semibold mt-10">
+                Menu
+              </h3>
+              <ul className="space-y-4 mt-4">
+                {navLinks.map((item) => (
+                  <Link
+                    href={item.link}
+                    rel="noopener noreferrer"
+                    className={navLinkClass}
+                    onClick={closeMenu}
+                    key={item.id}
+                  >
+                    {item.navLink}
+                  </Link>
+                ))}
+              </ul>
+            </div>
+            <div className="mb-8">
+              <h3 className="text-white uppercase text-xs font-br-firma-semibold mt-10">
+                Follow
+              </h3>
+              <ul className="mt-4">
+                {smLinks.map((item) => (
+                  <Link
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={smLinkClass}
+                    key={item.id}
+                    onClick={closeMenu}
+                  >
+                    {item.navLink}
+                  </Link>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </nav>

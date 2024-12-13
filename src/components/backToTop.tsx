@@ -31,9 +31,9 @@ export default function BackToTop() {
       {/* {showButton && ( */}
       <button
         onClick={scrollToTop}
-        className="bg-off-black py-4 w-full text-chinese-white justify-center align-center"
+        className="bg-black py-4 w-full text-white justify-center align-center rounded-lg cursor-pointer"
       >
-        <FontAwesomeIcon icon={faArrowUp} /> Back to the top
+        Back to the top <FontAwesomeIcon icon={faArrowUp} />
       </button>
       {/* )} */}
     </>

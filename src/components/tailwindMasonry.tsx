@@ -1,11 +1,15 @@
-import ImageOne from "../../public/image-one.png";
-import ImageTwo from "../../public/image-two.jpg";
-import ImageThree from "../../public/image-three.jpeg";
-import ImageFour from "../../public/image-four.jpeg";
-import ImageFive from "../../public/image-five.jpeg";
-import ImageSix from "../../public/image-six.jpeg";
-import ImageSeven from "../../public/image-seven.jpeg";
-import ImageEight from "../../public/image-eight.jpeg";
+import ImageOne from "../../public/image-one.jpg";
+import ImageTwo from "../../public/image-two.png";
+import ImageThree from "../../public/image-three.jpg";
+import ImageFour from "../../public/image-four.png";
+import ImageFive from "../../public/image-five.png";
+import ImageSix from "../../public/image-six.jpg";
+import ImageSeven from "../../public/image-seven.jpg";
+import ImageEight from "../../public/image-eight.png";
+import ImageNine from "../../public/image-nine.png";
+import ImageTen from "../../public/image-ten.png";
+import ImageEleven from "../../public/image-eleven.png";
+import ImageTwelve from "../../public/image-twelve.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -66,13 +70,41 @@ const Images = [
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
   },
+  {
+    id: 9,
+    image: ImageNine,
+    alt: "",
+    projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+    projectHeader: "Project Head",
+  },
+  {
+    id: 10,
+    image: ImageTen,
+    alt: "",
+    projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+    projectHeader: "Project Head",
+  },
+  {
+    id: 11,
+    image: ImageEleven,
+    alt: "",
+    projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+    projectHeader: "Project Head",
+  },
+  {
+    id: 12,
+    image: ImageTwelve,
+    alt: "",
+    projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+    projectHeader: "Project Head",
+  },
 ];
 
 const TailwindMasonry = () => {
   return (
     <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 mb-4">
       {Images.map((item) => (
-        <div className="mb-4 group overflow-hidden relative rounded-lg ">
+        <div className="mb-4 group overflow-hidden relative rounded-lg cursor-pointer ">
           <Link href="/" key={item.id}>
             <Image
               src={item.image}
