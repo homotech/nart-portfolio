@@ -131,13 +131,13 @@ const NewNav = () => {
 
         <div
           id="mobile-menu"
-          className={`fixed top-0 left-0 w-full h-full md:px-8 lg:px-16 bg-black p-4 z-40 inset-0 transform transition-transform duration-500 ease-in-out ${
+          className={`absolute top-0 left-0 w-full h-screen md:px-8 lg:px-16 bg-black p-4 z-40 inset-0 transform transition-transform duration-500 ease-in-out ${
             isOpen ? "translate-x-0" : "-translate-x-full"
           }`}
           //   style={{ display: isOpen ? "block" : "none" }}
           aria-hidden={!isOpen}
         >
-          <div className="min-h-screen flex flex-col">
+          <div className="h-full flex flex-col">
             <div className="flex-grow">
               <h3 className="text-white uppercase text-xs font-br-firma-semibold mt-10">
                 Menu
