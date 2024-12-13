@@ -12,11 +12,13 @@ import ImageEleven from "../../public/image-eleven.png";
 import ImageTwelve from "../../public/image-twelve.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
-const Images = [
+const Projects = [
   {
     id: 1,
     image: ImageOne,
+    category: "brand identity",
     alt: "",
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
@@ -24,6 +26,7 @@ const Images = [
   {
     id: 2,
     image: ImageTwo,
+    category: "poster",
     alt: "",
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
@@ -31,6 +34,7 @@ const Images = [
   {
     id: 3,
     image: ImageThree,
+    category: "brand identity",
     alt: "",
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
@@ -38,6 +42,7 @@ const Images = [
   {
     id: 4,
     image: ImageFour,
+    category: "poster",
     alt: "",
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
@@ -45,6 +50,7 @@ const Images = [
   {
     id: 5,
     image: ImageFive,
+    category: "poster",
     alt: "",
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
@@ -52,6 +58,7 @@ const Images = [
   {
     id: 6,
     image: ImageSix,
+    category: "brand identity",
     alt: "",
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
@@ -59,6 +66,7 @@ const Images = [
   {
     id: 7,
     image: ImageSeven,
+    category: "brand identity",
     alt: "",
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
@@ -66,6 +74,7 @@ const Images = [
   {
     id: 8,
     image: ImageEight,
+    category: "poster",
     alt: "",
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
@@ -73,6 +82,7 @@ const Images = [
   {
     id: 9,
     image: ImageNine,
+    category: "poster",
     alt: "",
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
@@ -80,6 +90,7 @@ const Images = [
   {
     id: 10,
     image: ImageTen,
+    category: "poster",
     alt: "",
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
@@ -87,6 +98,7 @@ const Images = [
   {
     id: 11,
     image: ImageEleven,
+    category: "poster",
     alt: "",
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
@@ -94,16 +106,42 @@ const Images = [
   {
     id: 12,
     image: ImageTwelve,
+    category: "poster",
     alt: "",
     projectDesc: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
     projectHeader: "Project Head",
   },
 ];
 
+const categoriesArr = [
+  "all",
+  "brand identity",
+  "poster",
+  "website design",
+  "illustrations",
+];
+
 const TailwindMasonry = () => {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  const filteredPojects =
+    selectedCategory === "all"
+      ? Projects
+      : Projects.filter((project) => project.category === selectedCategory);
   return (
     <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 mb-4">
-      {Images.map((item) => (
+      <div>
+        {categoriesArr.map((item) => (
+          <button
+            key={item}
+            onClick={() => setSelectedCategory(item)}
+            className={`text-uppecase px-4 py-2 `}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+      {filteredPojects.map((item) => (
         <div className="mb-4 group overflow-hidden relative rounded-lg cursor-pointer ">
           <Link href="/" key={item.id}>
             <Image

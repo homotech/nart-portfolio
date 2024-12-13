@@ -11,7 +11,7 @@ const navLinks = [
   {
     id: 1,
     navLink: "Work",
-    link: "work",
+    link: "",
   },
   {
     id: 2,
