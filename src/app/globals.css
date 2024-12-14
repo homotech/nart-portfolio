@@ -46,6 +46,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "br-firma-medium";
+  src: url("/br-firma/br-firma-medium.woff") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   font-family: "br-firma-regular", sans-serif;
   /* background-color: var(--smoky-black); */

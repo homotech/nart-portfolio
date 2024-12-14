@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-// import Navbar from "../components/navbar";
-import NewNav from "../components/newNav";
+import Navbar from "../components/navbar";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import Footer from "../components/footer";
 // import "@fortawesome/fontawesome-free/css/all.css";
@@ -27,9 +26,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="containers w-full">
           <header>
-            <NewNav />
-            {/* <NavbarNew /> */}
-            {/* <Navbar /> */}
+            <Navbar />
           </header>
           <main>{children}</main>
           <Footer />

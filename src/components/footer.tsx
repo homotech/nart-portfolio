@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import NartLogo from "../../public/nartlogo.svg";
 import SocialLinks from "./socialLinks";
+import SubHeader from "./subHeader";
+
 const subheadingClass =
   "text-xs font-br-firma-semibold uppercase text-neutral-500";
 const paragraphClass =
@@ -12,11 +14,11 @@ export default function Footer() {
       <div className="container md:flex ">
         {/* Social media  */}
         <div className="mt-4 md:m-0 basis-1/4">
-          <p className={subheadingClass}>Follow</p>
+          <SubHeader subheading="Follow"></SubHeader>
           {<SocialLinks paragraphClass={paragraphClass} />}
         </div>
         <div className="mt-8 md:m-0 basis-1/4">
-          <p className={subheadingClass}>Say Hello</p>
+          <SubHeader subheading="Say Hello"></SubHeader>
           <p className={paragraphClass}>
             <Link href="mailto:adonisdaniel931@gmail.com">
               adonisdaniel931@gmail.com

@@ -1,144 +1,185 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/legacy/image";
-import Logo from "@/public/nart-logo.svg";
-import AnimatedHamburger from "./animatedHamburger";
+import { escape } from "querystring";
+
+const navLinkClass =
+  "transition duration-300 hover:text-neutral-500 text-white font-br-firma-regular text-5xl md:text-6xl block";
+const smLinkClass =
+  "transition duration-300 hover:text-neutral-500 text-white font-br-firma-semibold text-base md:text-2xl block";
+const navLinks = [
+  {
+    id: 1,
+    navLink: "Work",
+    link: "/",
+  },
+  {
+    id: 2,
+    navLink: "Info",
+    link: "/info",
+  },
+  {
+    id: 3,
+    navLink: "News",
+    link: "/news",
+  },
+];
+const smLinks = [
+  {
+    id: 1,
+    navLink: "LinkedIn",
+    link: "https://www.linkedin.com/in/daniel-adonis-6485b7202/",
+  },
+  {
+    id: 2,
+    navLink: "Instagram",
+    link: "https://www.instagram.com/nartthedesigner/",
+  },
+  {
+    id: 3,
+    navLink: "Behance",
+    link: "https://www.behance.net/adonisdaniel",
+  },
+];
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [menuVisible, setMenuVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  const toggleMenu = () => {
-    if (isMenuOpen) {
-      setMenuVisible(false);
-      setTimeout(() => setIsMenuOpen(false), 300);
-    } else {
-      setIsMenuOpen(true);
-      setTimeout(() => setMenuVisible(true), 50);
-    }
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const closeMenu = () => setIsOpen(false);
+
   useEffect(() => {
-    const handClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (isMenuOpen && !target.closest("nav") && !target.closest("button")) {
-        toggleMenu();
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
       }
+      setLastScrollY(currentScrollY);
     };
 
-    document.addEventListener("mousedown", handClickOutside);
-    return () => document.removeEventListener("mousedown", handClickOutside);
-  }, [isMenuOpen, toggleMenu]);
-  return (
-    <header className="p-4 overflow-hidden flex justify-between">
-      <div>
-        <span></span>
-      </div>
-      <div>
-        <Link href="/">Daniel Adonis</Link>
-      </div>
-      <div className="logo w-2/12 mt-1">
-        <Link href={"/"}>
-          <Image
-            src={Logo}
-            alt="Nart The Designer logo"
-            width={50}
-            height={20}
-            // layout="responsive"
-          />
-        </Link>
-      </div>
-      <div className="w-6 z-50 relative">
-        <AnimatedHamburger isOpen={isMenuOpen} toggle={toggleMenu} />
-      </div>
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-      {isMenuOpen && (
-        <nav
-          className={`fixed inset-0 bg-smoky-black z-40 transition-opacity duration-300 ease-in-out flex items-center justify-center ${
-            menuVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <ul className="text-center ">
-            {["About", "Portfolio", "Say Hello", "Blog"].map((item) => (
-              <li key={item} className="my-4">
-                <Link
-                  href={`/${item.toLowerCase().replace(" ", "-")}`}
-                  className="text-2xl font-br-firma-light text-chinese-white hover:text-crayola"
-                  onClick={() => toggleMenu()}
-                >
-                  {item}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
-      {/* <div>
-        <Link href={"/"} className="">
-          Home
-        </Link>
-      </div>
-      <div className="sticky nav-container flex-col lg:flex-row lg:justify-between  flex px-4 py-4 xl:items-center">
-        <div className="flex justify-between mb-8 lg:mb-0 xl:mb-0 lg:w-1/4 xl:w-1/4 ">
-          <Link href={"/"} className="">
-            <Image
-              src={Logo}
-              alt="Nart Logo Design"
-              layout="responsive"
-              style={{
-                maxWidth: "30%",
-              }}
-              //   objectFit="contain"
-            ></Image>
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.removeEventListener("keydown", handleEscape);
+        document.body.style.overflow = "unset";
+      };
+    }
+  }, [isOpen]);
+
+  return (
+    <header
+      className={`w-full fixed top-0 left-0 z-50 bg-white transform transition-transform duration-300 ${
+        isVisible || isOpen ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <nav className="relative" role="navigation">
+        {/* The button */}
+        <div className={`absolute px-4 md:px-8 lg:px-16 top-1/3 right-0 z-50 `}>
+          <button
+            className={"space-y-1.5 group"}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            <div
+              className={`w-6 h-0.5 transition-all ${
+                isOpen ? "rotate-45 translate-y-2 bg-white" : "bg-black"
+              }`}
+            ></div>
+            <div
+              className={`w-6 h-0.5 transition-all bg-black ${
+                isOpen ? "opacity-0" : "opacity-100"
+              }`}
+            ></div>
+            <div
+              className={`w-6 h-0.5 transition-all ${
+                isOpen ? "-rotate-45 -translate-y-2 bg-white" : "bg-black"
+              }`}
+            ></div>
+          </button>
+        </div>
+        {/* End of the button */}
+
+        {/* The name on the header  */}
+        <div className={`p-4 w-full`}>
+          <Link
+            href="/"
+            className="text-base lg:text-xl text-center font-br-firma-regular block"
+          >
+            Daniel Adonis
           </Link>
-          <div className="w-12 lg:hidden">
-            <button onClick={toggleMenu} className="text-2xl">
-              {
-                <FontAwesomeIcon
-                  icon={isMenuOpen ? faXmark : faBars}
-                  className=""
-                />
-              }
-            </button>
-          </div>
         </div>
+        {/* End of the name */}
+
+        {/* Mobile Menu */}
+
         <div
-          className={
-            isOpen
-              ? "lg:flex lg:flex-row lg:w-3/4 xl:w-3/4 lg:gap-20  xl:items-center"
-              : "hidden lg:flex lg:flex-row lg:w-3/4 xl:w-3/4 lg:gap-20  xl:items-center"
-          }
+          id="mobile-menu"
+          className={`absolute top-0 left-0 w-full h-screen md:px-8 lg:px-16 bg-black p-4 z-40 inset-0 transform transition-transform duration-500 ease-in-out ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+          //   style={{ display: isOpen ? "block" : "none" }}
+          aria-hidden={!isOpen}
         >
-          <ul className="flex flex-col lg:flex-row mb-4 lg:mb-0 xl:mb-0 lg:w-2/3 lg:justify-between h-auto">
-            {navLinks.map((link, index) => {
-              return (
-                <li className={link.className}>
-                  <Link href={link.href}>{link.label}</Link>
-                </li>
-              );
-            })}
-            {/* <li className="py-4  mb-4 xl:mb-0 px-4 hover:font-bold">
-              <Link href={"/work"}>Works</Link>
-            </li>
-            <li className="py-4  mb-4 xl:mb-0 px-4 hover:font-bold">
-              <Link href={"/about"}>About Me</Link>
-            </li>
-            <li className="py-4  mb-4 xl:mb-0 px-4 hover:font-bold">
-              <Link href={"/blog"}>Read My Blog</Link>
-            </li>
-            <li className="py-4  mb-4 xl:mb-0 px-4 hover:font-bold">
-              <Link href={"/contact-us"}>Contact Us</Link>
-            </li> */}
-      {/* </ul>
-          <div className="w-full lg:w-1/3 lg:h-full xl:h-full">
-            <button className="bg-black text-white w-full xl:h-full rounded px-4 py-4 rounded-xl">
-              Reach out
-            </button>
+          <div className="h-full flex flex-col">
+            <div className="flex-grow">
+              <h3 className="text-white uppercase text-xs font-br-firma-semibold mt-10">
+                Menu
+              </h3>
+              <ul className="space-y-4 mt-4">
+                {navLinks.map((item) => (
+                  <Link
+                    href={item.link}
+                    rel="noopener noreferrer"
+                    className={navLinkClass}
+                    onClick={closeMenu}
+                    key={item.id}
+                  >
+                    {item.navLink}
+                  </Link>
+                ))}
+              </ul>
+            </div>
+            <div className="mb-8">
+              <h3 className="text-white uppercase text-xs font-br-firma-semibold mt-10">
+                Follow
+              </h3>
+              <ul className="mt-4">
+                {smLinks.map((item) => (
+                  <Link
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={smLinkClass}
+                    key={item.id}
+                    onClick={closeMenu}
+                  >
+                    {item.navLink}
+                  </Link>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>  */}
+      </nav>
     </header>
   );
 };
+
 export default Navbar;

@@ -24,6 +24,7 @@ const config: Config = {
         "br-firma-light": ['"br-firma-light"', "sans-serif"],
         "br-firma-regular": ['"br-firma-regular"', "sans-serif"],
         "br-firma-bold": ['"br-firma-bold"', "sans-serif"],
+        "br-firma-medium": ['"br-firma-medium"', "sans-serif"],
         "br-firma-semibold": ['"br-firma-semibold"', "sans-serif"],
       },
       backgroundImage: {
