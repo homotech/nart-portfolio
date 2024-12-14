@@ -24,7 +24,7 @@ const socialMediaLinks = [
   {
     id: 5,
     socialmedia: "Behance",
-    link: "https://www.linkedin.com/in/daniel-adonis-6485b7202/",
+    link: "https://www.behance.net/adonisdaniel",
   },
 ];
 
