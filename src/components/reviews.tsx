@@ -26,7 +26,7 @@ export default function Reviews() {
     };
     fetchReviews();
     console.log(reviews);
-  }, []);
+  }, [reviews]);
   if (loading) {
     return <p>Loading reviews........</p>;
   }

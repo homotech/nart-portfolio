@@ -1,6 +1,6 @@
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
-export default async function (req, res) {
+export default async function submitReviewHandler(req, res) {
   if (req.method === "POST") {
     try {
       const { projectId, rating, feedback } = req.body;

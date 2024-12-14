@@ -25,8 +25,7 @@ export default function SayHello() {
       <div className="mb-4">
         <h1 className="font-br-firma-light text-crayola text-3xl">Say Hello</h1>
         <p className="font-br-firma-regular text-white text-sm">
-          {" "}
-          I'll respond immediately.
+          I&apos;ll respond immediately.
         </p>
       </div>
 

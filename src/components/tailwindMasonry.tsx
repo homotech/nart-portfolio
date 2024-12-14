@@ -157,7 +157,10 @@ const TailwindMasonry = () => {
       </div>
       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 mb-4">
         {filteredPojects.map((item) => (
-          <div className="mb-4 group overflow-hidden relative rounded-lg cursor-pointer ">
+          <div
+            className="mb-4 group overflow-hidden relative rounded-lg cursor-pointer"
+            key={item.id}
+          >
             <Link href="/" key={item.id}>
               <Image
                 src={item.image}
