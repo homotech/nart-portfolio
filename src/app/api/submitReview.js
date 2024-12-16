@@ -1,5 +1,5 @@
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../firebaseConfig";
+import { db } from "../../../firebaseConfig";
 export default async function submitReviewHandler(req, res) {
   if (req.method === "POST") {
     try {

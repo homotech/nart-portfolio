@@ -12,15 +12,20 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@prisma/client": "^6.0.1",
+    "bcryptjs": "^2.4.3",
     "firebase": "^10.13.2",
     "masonry-layout": "^4.2.2",
     "next": "14.2.4",
+    "next-auth": "^4.24.11",
     "react": "^18",
     "react-dom": "^18",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@types/bcryptjs": "^2.4.6",
     "@types/masonry-layout": "^4.2.8",
     "@types/node": "^20",
     "@types/react": "^18",
