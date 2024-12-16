@@ -54,6 +54,8 @@
 }
 body {
   font-family: "br-firma-regular", sans-serif;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   /* background-color: var(--smoky-black); */
 }
 

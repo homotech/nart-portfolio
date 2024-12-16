@@ -142,7 +142,7 @@ const TailwindMasonry = () => {
       : Projects.filter((project) => project.category === selectedCategory);
   return (
     <div className="">
-      <div className="flex mx-auto w-full mb-4 gap-4 overflow-scroll no-scrollbar">
+      <div className="flex mx-auto w-full mb-4 gap-4 overflow-scroll md:overflow-hidden">
         {categoriesArr.map((item) => (
           <button
             key={item}
