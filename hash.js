@@ -1,8 +1,9 @@
 const bcrypt = require("bcryptjs");
 
-async function hashPassword() {
-  const hash = await bcrypt.hash("Babyruler999.", 10);
-  console.log("", hash);
-}
+const password = "Babyruler999.";
+const saltRounds = 10;
 
-hashPassword();
+bcrypt.hash(password, saltRounds).then((hash) => {
+  console.log("Store this hash in your .env.local file:");
+  console.log(hash);
+});

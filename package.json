@@ -12,8 +12,11 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@next/env": "^15.1.1",
     "@prisma/client": "^6.0.1",
+    "@vercel/postgres": "^0.10.0",
     "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
     "firebase": "^10.13.2",
     "masonry-layout": "^4.2.2",
     "next": "14.2.4",
@@ -21,6 +24,7 @@
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.33.5",
+    "vercel": "^39.2.2",
     "zod": "^3.24.1"
   },
   "devDependencies": {
