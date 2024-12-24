@@ -2,11 +2,12 @@
 
 import NextAuth, { DefaultSession } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-// import bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs";
 // import { NextResponse } from "next/server";
 import { AuthOptions } from "next-auth";
 
 const config = require("../../../../../config.json");
+// const bcrypt = require("bcrypt");
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -22,10 +23,11 @@ export const authOptions: AuthOptions = {
           email: string;
           password: string;
         };
-        if (
-          email !== "adonisdaniel931@gmail.com" ||
-          password !== "Babyruler999."
-        ) {
+        const configEmail = config.email;
+        const configPassword = config.password;
+        const isValidPassword = bcrypt.compare(password, configPassword);
+        console.log(isValidPassword);
+        if (email !== configEmail || !isValidPassword) {
           throw new Error("Invalid Credentials");
           return null;
         }
