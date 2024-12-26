@@ -122,7 +122,7 @@ const Projects = [
     projectHeader: "Project Head",
   },
   {
-    id: 13,
+    id: 14,
     image: ImageFourteen,
     category: "illustrations",
     alt: "",
