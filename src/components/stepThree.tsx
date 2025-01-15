@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useEffect, useState, useContext } from "react";
 import { useRouter } from "next/navigation";
 import { collection, onSnapshot, doc, updateDoc } from "firebase/firestore";

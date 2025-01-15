@@ -12,7 +12,7 @@ import ImageEleven from "../../public/image-eleven.png";
 import ImageTwelve from "../../public/image-twelve.png";
 import ImageThirteen from "../../public/image-thirteen.png";
 import ImageFourteen from "../../public/image-fourteen.png";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { useState } from "react";
 

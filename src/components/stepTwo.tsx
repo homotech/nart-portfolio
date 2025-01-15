@@ -9,7 +9,7 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useDropzone } from "react-dropzone";
 import { AdminContext } from "../app/admin/layout";
 

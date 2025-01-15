@@ -8,7 +8,7 @@ import ImageFive from "../../public/image-five.jpeg";
 import ImageSix from "../../public/image-six.jpeg";
 import ImageSeven from "../../public/image-seven.jpeg";
 import ImageEight from "../../public/image-eight.jpeg";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 const Images = [
