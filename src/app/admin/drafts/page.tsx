@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import { AdminContext } from "../layout";
 import Loading from "react-loading";
 import DeleteProject from "@/src/components/deleteProject";
+import { CircularProgress } from "@mui/material";
 
 const DisplayDrafts = () => {
   const { setDraftsID } = useContext(AdminContext);
@@ -77,13 +78,7 @@ const DisplayDrafts = () => {
       <h1 className="text-3xl">Drafts</h1>
       {isLoading ? (
         <div className="flex justify-center items-center h-screen">
-          <Loading
-            className=""
-            type="spin"
-            color="#000000"
-            height="64"
-            width="64"
-          ></Loading>
+          <CircularProgress />
         </div>
       ) : drafts.length === 0 ? (
         <p>No drafts available</p>

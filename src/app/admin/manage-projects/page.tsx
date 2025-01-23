@@ -15,6 +15,7 @@ import Link from "next/link";
 import { AdminContext } from "../layout";
 import { useRouter } from "next/navigation";
 import DeleteProject from "@/src/components/deleteProject";
+import { CircularProgress } from "@mui/material";
 
 const ManageProjects = () => {
   const [projects, setProjects] = useState<any[]>([]);
@@ -68,7 +69,10 @@ const ManageProjects = () => {
 
   projects;
   return isLoading ? (
-    <Loading type="spin" color="#000000" height="64" width="64"></Loading>
+    // <Loading type="spin" color="#000000" height="64" width="64"></Loading>
+    <div className="flex justify-center items-center h-screen">
+      <CircularProgress />
+    </div>
   ) : (
     <div>
       <h1>Manage Projects</h1>

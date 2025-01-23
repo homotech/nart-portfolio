@@ -31,7 +31,7 @@ export default function Footer() {
       </div>
       <div className="copyright mt-4">
         <h3 className="uppercase text-xs font-br-firma-semibold">
-          © Adonis Daniel 2024
+          © Adonis Daniel 2025
         </h3>
       </div>
     </footer>

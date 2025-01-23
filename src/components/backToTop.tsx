@@ -28,14 +28,14 @@ export default function BackToTop() {
 
   return (
     <>
-      {/* {showButton && ( */}
-      <button
-        onClick={scrollToTop}
-        className="bg-black py-4 w-full text-white justify-center align-center rounded-lg cursor-pointer"
-      >
-        Back to the top <FontAwesomeIcon icon={faArrowUp} />
-      </button>
-      {/* )} */}
+      {showButton && (
+        <button
+          onClick={scrollToTop}
+          className="bg-black py-4 w-full text-md text-white rounded-lg cursor-pointer"
+        >
+          Back to the top
+        </button>
+      )}
     </>
   );
 }
