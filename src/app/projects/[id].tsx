@@ -42,7 +42,11 @@ const ProjectPage = ({ params }: { params: Params }) => {
   }, [id]);
 
   if (isLoading) {
-    return <CircularProgress />;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <CircularProgress />;
+      </div>
+    );
   }
 
   if (errorMessage) {
@@ -55,13 +59,15 @@ const ProjectPage = ({ params }: { params: Params }) => {
 
   return project ? (
     <div>
-      <h1>{project.title}</h1>
+      {/* <h1 className="text-xl font-br-firma-bold">{project.title}</h1> */}
       <p>{project.description}</p>
-      {project.images.map((image) => (
-        <div className="relative">
-          <Image src={image} layout={fill} objectFit={cover} />
-        </div>
-      ))}
+      <div className="border-2 border-red-500">
+        {project.images.map((image, index) => (
+          <div className="" key={index}>
+            <img src={image} className="w-full" />
+          </div>
+        ))}
+      </div>
     </div>
   ) : (
     <h1>Project not found</h1>

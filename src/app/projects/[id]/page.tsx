@@ -59,17 +59,16 @@ const ProjectPage = ({ params }: { params: Params }) => {
   }
 
   return project ? (
-    <div className="mt-16">
-      <h1>{project.title}</h1>
-      <p>{project.description}</p>
+    <div className="mt-16 mx-4">
+      <h1 className="font-br-firma-medium text-4xl tracking-tight my-4">
+        {project.title}
+      </h1>
+      <p className="text-xl font-br-firma-regular mb-4">
+        {project.description}
+      </p>
       {project.images.map((image) => (
-        <div className="relative w-full h-[600px]">
-          <Image
-            src={image.url}
-            layout="fill"
-            objectFit="cover"
-            alt="Image thumbnail"
-          />
+        <div className="w-full overflow-hidden rounded-lg mb-4">
+          <img src={image.url} className="" alt="Image thumbnail" />
         </div>
       ))}
     </div>

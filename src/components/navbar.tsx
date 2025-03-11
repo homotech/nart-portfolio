@@ -100,7 +100,9 @@ const Navbar = () => {
     >
       <nav className="relative" role="navigation">
         {/* The button */}
-        <div className={`absolute px-4 md:px-8 lg:px-16 top-1/3 right-0 z-50 `}>
+        <div
+          className={`absolute px-4  md:px-8 lg:px-16 top-1/3 right-0 z-50 `}
+        >
           <button
             className={"space-y-1.5 group"}
             onClick={() => setIsOpen(!isOpen)}
@@ -126,10 +128,10 @@ const Navbar = () => {
         {/* End of the button */}
 
         {/* The name on the header  */}
-        <div className={`p-4 w-full`}>
+        <div className={`px-4 md:px-16 py-4 w-full`}>
           <Link
             href="/"
-            className="text-base lg:text-xl text-center font-br-firma-regular block"
+            className="text-base lg:text-xl font-br-firma-medium block tracking-tight"
           >
             Daniel Adonis
           </Link>

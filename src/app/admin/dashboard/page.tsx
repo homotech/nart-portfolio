@@ -3,16 +3,21 @@
 import { signOut } from "next-auth/react";
 import DisplayDrafts from "../drafts/page";
 import Link from "next/link";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AdminContext } from "../layout";
 
 const Dashboard = () => {
   const { setDraftsID, setPublishedProjectsID } = useContext(AdminContext);
+  const [dashboarbButtons, setDashboardButtons] = useState([
+    { href: "/admin/upload-projects", text: "Upload Project" },
+    { href: "/admin/drafts", text: "Go to Drafts" },
+    { href: "/admin/manage-projects", text: "Manage Projects" },
+  ]);
 
   useEffect(() => {
     setDraftsID("");
     setPublishedProjectsID("");
-  }, []);
+  });
 
   const handleSignout = () => {
     signOut({ callbackUrl: "/admin/login" });
@@ -28,30 +33,16 @@ const Dashboard = () => {
           Sign Out
         </button>
       </div>
-      <div className="my-4">
-        <Link
-          href="/admin/upload-projects"
-          className="w-full block border-2 border-black px-4 py-2 mb-4"
-        >
-          Upload Project
-        </Link>
-      </div>
-      <div>
-        <Link
-          href="/admin/drafts"
-          className="w-full block border-2 border-black px-4 py-2 mt-4 "
-        >
-          Go to Drafts
-        </Link>
-      </div>
-      <div>
-        <Link
-          href="/admin/manage-projects"
-          className="w-full block border-2 border-black px-4 py-2 mt-4 "
-        >
-          Manage Projects
-        </Link>
-      </div>
+      {dashboarbButtons.map((item, index) => (
+        <div className="my-4" key={item.text}>
+          <Link
+            href={item.href}
+            className="w-full block border-2 border-black px-4 py-2 mt-4 "
+          >
+            {item.text}
+          </Link>
+        </div>
+      ))}
     </div>
   );
 };

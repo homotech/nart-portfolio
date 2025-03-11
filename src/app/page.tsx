@@ -1,14 +1,10 @@
 "use client";
-import Image from "next/legacy/image";
-import Reviews from "../components/reviews";
 import BackToTop from "../components/backToTop";
-import SayHello from "../components/sayHello";
-import MasonryGrid from "../components/masonarygrid";
 import TailwindMasonry from "../components/tailwindMasonry";
 
 export default function Home() {
   return (
-    <div className="mt-14 px-4 py-2 md:py-4 md:px-16">
+    <div className="overflow-hidden mt-14 px-4 py-2 md:py-4 md:px-16">
       <TailwindMasonry />
       {/* <MasonryGrid /> */}
       {/* <div className="mx-6">

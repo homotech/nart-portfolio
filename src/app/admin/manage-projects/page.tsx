@@ -77,8 +77,8 @@ const ManageProjects = () => {
     <div>
       <h1>Manage Projects</h1>
       <div>
-        {projects.map((project) => (
-          <div className="flex justify-between gap-4 mb-4">
+        {projects.map((project, index) => (
+          <div className="flex justify-between gap-4 mb-4" key={index}>
             <Link
               href="#"
               key={project.id}
