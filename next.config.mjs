@@ -3,7 +3,7 @@
 const nextConfig = {
   output: "export",
   basePath: "/nart-portfolio",
-  assetPrefix: "/nart-portfolio/docs/",
+  assetPrefix: "/nart-portfolio/",
   images: { unoptimized: true },
 };
 
