@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useCallback, useState } from "react";
 import React from "react";
 import { useDropzone } from "react-dropzone";
+import Image from "next/image";
 
 const DropZone = () => {
   const [selectedImages, setSelectedImages] = useState<{ preview: string }[]>(
@@ -68,7 +69,7 @@ const DropZone = () => {
         {selectedImages?.map((file, index) => (
           <div className="relative border-2 border-red-200" key={index}>
             <div className="overflow-hidden rounded-lg relative z-20">
-              <img
+              <Image
                 src={file.preview}
                 // style={{ width: "auto", height: "auto" }}
                 alt="This is an Alt"

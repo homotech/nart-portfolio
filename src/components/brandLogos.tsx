@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
+import Image from "next/image";
 const BrandLogos = () => {
   interface BrandLogo {
     id: string;
@@ -21,8 +22,8 @@ const BrandLogos = () => {
     fetchData();
   }, []);
   return brandLogos.map((logo) => (
-    <div key={logo.id} className="w-full">
-      <img src={logo.link} className="w-full" />
+    <div key={logo.id} className="w-full flex justify-center align-center">
+      <Image src={logo.link} className="w-full" alt="Logos" />
     </div>
   ));
 };

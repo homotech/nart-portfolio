@@ -10,7 +10,7 @@ export default function Info() {
         based in Abuja, Nigeria.
       </p>
       <div className="mb-4">
-        <SubHeader subheading="About" classes=""></SubHeader>
+        <SubHeader subheading="About" classes="mb-4"></SubHeader>
         <p className="mt-4 md:w-4/6 font-br-firma-medium leading-7 tracking-tight">
           My work is both character and colour-driven, and whilst graphic, it
           retains a tactile warmth and quirkiness. I aim to show intimate
@@ -19,7 +19,7 @@ export default function Info() {
         </p>
       </div>
       <section>
-        <SubHeader subheading="Work Experience"></SubHeader>
+        <SubHeader subheading="Work Experience" classes="mb-4"></SubHeader>
         <div>
           <h1 className="text-2xl font-br-firma-medium tracking-tight my-4">
             I have worked in all of these places

@@ -14,11 +14,11 @@ export default function Footer() {
       <div className="container md:flex ">
         {/* Social media  */}
         <div className="mt-4 md:m-0 basis-1/4">
-          <SubHeader subheading="Follow"></SubHeader>
+          <SubHeader subheading="Follow" classes=""></SubHeader>
           {<SocialLinks paragraphClass={paragraphClass} />}
         </div>
         <div className="mt-8 md:m-0 basis-1/4">
-          <SubHeader subheading="Say Hello"></SubHeader>
+          <SubHeader subheading="Say Hello" classes=""></SubHeader>
           <p className={paragraphClass}>
             <Link href="mailto:adonisdaniel931@gmail.com">
               adonisdaniel931@gmail.com

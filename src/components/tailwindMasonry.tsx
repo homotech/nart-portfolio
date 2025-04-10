@@ -58,7 +58,8 @@ const TailwindMasonry = () => {
       }
     };
     fetchProjects();
-  }, []);
+    console.log(isLoading);
+  });
   if (!isLoading && !error) {
     return (
       <div className="mb-4">
@@ -87,7 +88,7 @@ const TailwindMasonry = () => {
             >
               <Link href="/" className="block w-full relative" key={item.id}>
                 <div className="relative w-full h-auto group overflow-hidden rounded-lg">
-                  <img
+                  <Image
                     src={item.thumbnail.replace(/\.(png|jpg|jpeg)$/, ".webp")}
                     alt="image thumbnail"
                     loading="lazy"
@@ -109,13 +110,13 @@ const TailwindMasonry = () => {
                 <div className="flex justify-end ">
                   <Link
                     href={`/projects/${item.id}`}
-                    className="p-2 bg-white text-black rounded-full font-br-firma-regular text-base rounded-lg  text-center"
+                    className="px-4 py-1 bg-white overflow-hidden rounded-full text-black font-br-firma-regular flex items-center gap-4 transition-all duration-300"
                   >
                     <FontAwesomeIcon
                       icon={faArrowUpRightFromSquare}
-                      width={16}
-                      height={16}
+                      // size="2x"
                     />
+                    <span className="whitespace-nowrap">View Project</span>
                   </Link>
                 </div>
                 <div>
@@ -135,7 +136,11 @@ const TailwindMasonry = () => {
   }
 
   if (isLoading) {
-    return <CircularProgress />;
+    return (
+      <div className="mx-4 mt-16">
+        <CircularProgress />
+      </div>
+    );
   }
 
   if (!isLoading && error) {

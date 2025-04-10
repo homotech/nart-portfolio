@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  images: {
-    domains: ["firebasestorage.googleapis.com"],
-  },
+  output: "export",
+  basePath: "/nart-portfolio",
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

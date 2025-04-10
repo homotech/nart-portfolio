@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef } from "react";
 import { useDropzone } from "react-dropzone";
 import { ReactSortable } from "react-sortablejs";
+import Image from "next/image";
 
 interface ItemTypes {
   id: number;
@@ -22,7 +23,7 @@ const DropzoneUploader = () => {
   }, []);
 
   const { getRootProps, getInputProps } = useDropzone({
-    accept: "image/*",
+    accept: { "image/*": [] },
     onDrop,
   });
   return (
@@ -42,7 +43,7 @@ const DropzoneUploader = () => {
       >
         {images.map((file) => (
           <div key={file.id} className="relative">
-            <img
+            <Image
               src={file.preview}
               alt="Images Alt"
               className="w-full  object-cover rounded"
