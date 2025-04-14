@@ -17,38 +17,38 @@
 }
 @font-face {
   font-family: "br-firma-thin";
-  src: url("/br-firma/br-firma-thin.woff") format("woff2");
+  src: url("../../public/br-firma/BR-Firma-Thin.woff") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "br-firma-light";
-  src: url("/br-firma/br-firma-light.woff") format("woff2");
+  src: url("../../public/br-firma/br-firma-light.woff") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "br-firma-regular";
-  src: url("/br-firma/br-firma-regular.woff") format("woff2");
+  src: url("../../public/br-firma/br-firma-regular.woff") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "br-firma-bold";
-  src: url("/br-firma/br-firma-bold.woff") format("woff2");
+  src: url("../../public/br-firma/br-firma-bold.woff") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "br-firma-semibold";
-  src: url("/br-firma/br-firma-semibold.woff") format("woff2");
+  src: url("../../public/br-firma/br-firma-semibold.woff") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "br-firma-medium";
-  src: url("/br-firma/br-firma-medium.woff") format("woff2");
+  src: url("../../public/br-firma/br-firma-medium.woff") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
