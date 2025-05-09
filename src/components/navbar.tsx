@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { escape } from "querystring";
 
 const navLinkClass =
   "transition duration-300 hover:text-neutral-500 text-white font-br-firma-regular text-5xl md:text-6xl block";
