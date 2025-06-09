@@ -21,6 +21,7 @@ export default function Home() {
         </ul>
       </div>
       <WebDesign />
+      Just trying to get this thing to work
       {/* <TailwindMasonry /> */}
       {/* <MasonryGrid /> */}
       {/* <div className="mx-6">
