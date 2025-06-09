@@ -1,11 +1,27 @@
-"use client";
+// "use client";
+import Link from "next/link";
 import BackToTop from "../components/backToTop";
 import TailwindMasonry from "../components/tailwindMasonry";
+import WebDesign from "../components/webDesign";
+import Projects from "@/src/data/project.json";
 
 export default function Home() {
   return (
     <div className="overflow-hidden mt-14 px-4 py-2 md:py-4 md:px-16">
-      <TailwindMasonry />
+      <div>
+        <h1 className="text-2xl font-br-firma-medium tracking-tighter ">
+          Design Projects
+        </h1>
+        <ul>
+          {Projects.map((project) => (
+            <li key={project.id}>
+              <Link href={`/projects/${project.id}`}>{project.name}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <WebDesign />
+      {/* <TailwindMasonry /> */}
       {/* <MasonryGrid /> */}
       {/* <div className="mx-6">
         <h3 className="chinese-white text-2xl font-br-firma-light text-center">
@@ -25,7 +41,7 @@ export default function Home() {
       {/* Hello World */}
       {/* <Reviews /> */}
       {/* <SayHello /> */}
-      <BackToTop />
+      {/* <BackToTop /> */}
     </div>
   );
 }

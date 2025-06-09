@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-images": "node scripts/add-image-sizes.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -23,8 +24,10 @@
     "dotenv": "^16.4.7",
     "filepond": "^4.32.6",
     "firebase": "^11.1.0",
+    "fs-extra": "^11.3.0",
     "next": "14.2.4",
     "next-auth": "^4.24.11",
+    "probe-image-size": "^7.2.3",
     "react": "^18",
     "react-dom": "^18",
     "react-dropzone": "^14.3.5",
