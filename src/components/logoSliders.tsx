@@ -8,6 +8,7 @@ import Payaway from "@/public/Logos/Payaway.svg";
 import Tiqeasy from "@/public/Logos/tiqeasy.svg";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
+import Link from "next/link";
 const logos = [
   {
     name: "Logo 1",
@@ -32,28 +33,38 @@ const logos = [
 ];
 const LogoSliders = () => {
   return (
-    <Swiper
-      spaceBetween={1}
-      slidesPerView={2}
-      loop={true}
-      autoplay={{ delay: 1500, disableOnInteraction: false }}
-      modules={[Autoplay]}
-      speed={800}
-    >
-      {logos.map((logo, index) => (
-        <SwiperSlide key={index}>
-          <div className="flex h-24 justify-center items-center">
-            <Image
-              src={logo.src}
-              alt={logo.name}
-              className="object-contain"
-              width={100}
-              height={100}
-            />
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div>
+      <h1 className="text-2xl font-br-firma-medium tracking-tighter">
+        Here are some{" "}
+        <Link href="/logofolio" className="underline">
+          logos
+        </Link>{" "}
+        I have designed.
+      </h1>
+
+      <Swiper
+        spaceBetween={1}
+        slidesPerView={2}
+        loop={true}
+        autoplay={{ delay: 1500, disableOnInteraction: false }}
+        modules={[Autoplay]}
+        speed={800}
+      >
+        {logos.map((logo, index) => (
+          <SwiperSlide key={index}>
+            <div className="flex h-24 justify-center items-center">
+              <Image
+                src={logo.src}
+                alt={logo.name}
+                className="object-contain"
+                width={100}
+                height={100}
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 export default LogoSliders;
