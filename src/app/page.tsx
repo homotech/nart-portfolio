@@ -17,7 +17,7 @@ export default function Home() {
           {projects.map((project) => (
             <li key={project.id}>
               <Link
-                className="text-xl tracking-tight font-br-firma-medium hover:text-gray-500"
+                className="text-xl tracking-tighter font-br-firma-medium hover:text-gray-500"
                 href={`/projects/${project.id}`}
               >
                 {project.name}
