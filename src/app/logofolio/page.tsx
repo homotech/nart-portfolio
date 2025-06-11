@@ -36,8 +36,8 @@ export default function Work() {
       <div>
         <p className="font-br-firma-regular tracking-tight mb-4">
           This is a collection of logos I have designed. Each logo is a
-          representation of a brand's identity, crafted with attention to detail
-          and creativity.
+          representation of a brand&apos;s identity, crafted with attention to
+          detail and creativity.
         </p>
         <div className="flex flex-row flex-wrap gap-4 w-full space-between justify-between">
           {logos.map((logo, index) => (
