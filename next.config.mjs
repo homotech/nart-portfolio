@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 
+// const repo = "nart-portfolio";
 const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {

@@ -4,6 +4,7 @@ import BackToTop from "../components/backToTop";
 import TailwindMasonry from "../components/tailwindMasonry";
 import WebDesign from "../components/webDesign";
 import Projects from "@/src/data/project.json";
+import LogoSliders from "../components/logoSliders";
 
 export default function Home() {
   return (
@@ -21,7 +22,8 @@ export default function Home() {
         </ul>
       </div>
       <WebDesign />
-      Just trying to get this thing to work
+
+      <LogoSliders />
       {/* <TailwindMasonry /> */}
       {/* <MasonryGrid /> */}
       {/* <div className="mx-6">
