@@ -4,7 +4,7 @@ import "swiper/css";
 import BOAA from "@/public/Logos/boaa.svg";
 import FiBeauty from "@/public/Logos/fi-beauty.svg";
 import Omoeta from "@/public/Logos/omoeta.svg";
-import Payaway from "@/public/Logos/payaway.svg";
+import Payaway from "@/public/Logos/Payaway.svg";
 import Tiqeasy from "@/public/Logos/tiqeasy.svg";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
