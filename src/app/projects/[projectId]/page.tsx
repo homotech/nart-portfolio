@@ -1,7 +1,7 @@
-import Projects from "@/src/data/project.json";
+import { projects } from "@/src/data/project";
 import Image from "next/image";
 export function generateStaticParams() {
-  return Projects.map((project) => ({
+  return projects.map((project) => ({
     projectId: project.id,
   }));
 }
@@ -10,7 +10,7 @@ export default function ProjectPage({
 }: {
   params: { projectId: string };
 }) {
-  const project = Projects.find((project) => project.id === params.projectId);
+  const project = projects.find((project) => project.id === params.projectId);
   if (!project) {
     return (
       <div className="mt-16">
@@ -28,7 +28,7 @@ export default function ProjectPage({
         <p>{project.year}</p>
         <p>{project.type}</p>
       </div>
-      <div>
+      <div className="mt-4">
         {project.images.map((images, index) => (
           // <div key={index} className="relative w-full aspect-square mb-4">
           <Image
