@@ -5,10 +5,12 @@ import Link from "next/link";
 import WebDesign from "../components/webDesign";
 import { projects } from "@/src/data/project";
 import LogoSliders from "../components/logoSliders";
+import AboutMe from "../components/aboutMe";
 
 export default function Home() {
   return (
     <div className="overflow-hidden mt-14 px-4 py-2 md:py-4 md:px-16">
+      <AboutMe />
       <div className="mb-4">
         <h1 className="text-2xl font-br-firma-medium tracking-tighter mb-2 underline">
           Design Projects({projects.length})
