@@ -7,7 +7,9 @@ const WebDesign = () => {
   return (
     <div>
       <div>
-        <h1 className="text-2xl font-br-firma-medium">Coding Projects</h1>
+        <h1 className="text-3xl text-3xl font-br-firma-regular tracking-tighter mb-2 underline">
+          Coding Projects
+        </h1>
       </div>
       <div className="text-1xl bg-red-300 flex flex-row items-center">
         <Link href="/" className="bg-gray-100 flex-grow">
