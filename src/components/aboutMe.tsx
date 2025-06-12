@@ -16,7 +16,7 @@ const AboutMe = () => {
   return (
     <div className="relative">
       <h1 className="text-3xl font-br-firma-light">
-        Hi I'm{" "}
+        Hi I&apos;m{" "}
         <span
           onMouseEnter={mouseHover}
           onMouseLeave={mouseNotHovering}
@@ -46,8 +46,9 @@ const AboutMe = () => {
         identities for 4 years having worked in a wide range of industries
         garnering experiences in aall facet of desgn, And leaving a mark, making
         the world better, one identity at a time. As one of my favorite quotes
-        says, "We learn everyday", I invest in my skill at every chance I get,
-        which makes me an asset to friends, family, and my clients.
+        says, &quot;We learn everyday&quot;, I invest in my skill at every
+        chance I get, which makes me an asset to friends, family, and my
+        clients.
       </p>
     </div>
   );
