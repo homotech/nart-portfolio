@@ -14,7 +14,7 @@ const AboutMe = () => {
     console.log("Mouse Enter");
   };
   return (
-    <div className="relative mb-4">
+    <div className="mb-4">
       <h1 className="text-3xl font-br-firma-regular tracking-tighter">
         Hi I&apos;m{" "}
         <span

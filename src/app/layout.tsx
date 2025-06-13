@@ -27,19 +27,15 @@ export default function RootLayout({
   const router = useRouter();
   const pathname = usePathname();
   // const usesearchparams = useSearchParams();
-
-  const isAdmin = pathname.startsWith("/admin");
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="containers w-full">
-          {!isAdmin && (
-            <header>
-              <Navbar />
-            </header>
-          )}
+        <div className="containers w-full ">
+          <header>
+            <Navbar />
+          </header>
           <main>{children}</main>
-          {!isAdmin && <Footer />}
+          <Footer />
         </div>
       </body>
     </html>
