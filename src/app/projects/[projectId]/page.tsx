@@ -23,10 +23,16 @@ export default function ProjectPage({
       <h1 className="text-4xl font-br-firma-medium tracking-tighter">
         {project.name}
       </h1>
-      <p>{project.description}</p>
+      <p className="text-xl font-br-firma-regular text-gray-600 tracking-tight">
+        {project.description}
+      </p>
       <div className="flex flex-row gap-4">
-        <p>{project.year}</p>
-        <p>{project.type}</p>
+        <p className="text-xl font-br-firma-regular text-gray-600 tracking-tight">
+          {project.year}
+        </p>
+        <p className="text-xl font-br-firma-regular text-gray-600 tracking-tight">
+          {project.type}
+        </p>
       </div>
       <div className="mt-4">
         {project.images.map((images, index) => (

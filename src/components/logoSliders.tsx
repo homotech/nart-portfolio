@@ -9,28 +9,7 @@ import Tiqeasy from "@/public/Logos/tiqeasy.svg";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import Link from "next/link";
-const logos = [
-  {
-    name: "Logo 1",
-    src: BOAA,
-  },
-  {
-    name: "Logo 2",
-    src: FiBeauty,
-  },
-  {
-    name: "Logo 3",
-    src: Omoeta,
-  },
-  {
-    name: "Logo 4",
-    src: Payaway,
-  },
-  {
-    name: "Logo 5",
-    src: Tiqeasy,
-  },
-];
+import logos from "@/src/data/logos";
 const LogoSliders = () => {
   return (
     <div>
@@ -46,9 +25,9 @@ const LogoSliders = () => {
         spaceBetween={1}
         slidesPerView={2}
         loop={true}
-        autoplay={{ delay: 1500, disableOnInteraction: false }}
+        autoplay={{ delay: 300, disableOnInteraction: false }}
         modules={[Autoplay]}
-        speed={800}
+        speed={1000}
       >
         {logos.map((logo, index) => (
           <SwiperSlide key={index}>

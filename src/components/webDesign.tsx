@@ -5,17 +5,22 @@ import Link from "next/link";
 
 const WebDesign = () => {
   return (
-    <div>
-      <div>
-        <h1 className="text-3xl text-3xl font-br-firma-regular tracking-tighter mb-2 underline">
-          Coding Projects
-        </h1>
-      </div>
-      <div className="text-1xl bg-red-300 flex flex-row items-center">
-        <Link href="/" className="bg-gray-100 flex-grow">
-          Quote App
-        </Link>
-        <FontAwesomeIcon width={24} height={24} icon={faChevronRight} />
+    <div className="mb-4">
+      <h1 className="text-3xl font-br-firma-regular tracking-tighter mb-2 underline">
+        Coding Projects
+      </h1>
+      <div className="">
+        <ul>
+          <li className="flex items-center">
+            <Link
+              href="/"
+              className="text-xl tracking-tighter font-br-firma-medium hover:text-gray-500 flex-grow"
+            >
+              Quote App
+            </Link>
+            <FontAwesomeIcon width={24} height={24} icon={faChevronRight} />
+          </li>
+        </ul>
       </div>
     </div>
   );

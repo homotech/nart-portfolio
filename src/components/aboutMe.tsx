@@ -44,7 +44,7 @@ const AboutMe = () => {
         illustration, leaving lasting impressions. */}
         But most importantly a visual identity designer who has crafted
         identities for 4 years having worked in a wide range of industries
-        garnering experiences in aall facet of desgn, And leaving a mark, making
+        garnering experiences in these industries, And leaving a mark, making
         the world better, one identity at a time. As one of my favorite quotes
         says, &quot;We learn everyday&quot;, I invest in my skill at every
         chance I get, which makes me an asset to friends, family, and my

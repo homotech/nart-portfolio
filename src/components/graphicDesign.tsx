@@ -1,6 +1,8 @@
 // "use client";
 import { projects } from "../data/project";
 import Link from "next/link";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const GraphicDesign = () => {
   return (
     <div className="mb-4">
@@ -9,13 +11,14 @@ const GraphicDesign = () => {
       </h1>
       <ul>
         {projects.map((project) => (
-          <li key={project.id}>
+          <li key={project.id} className="flex items-center">
             <Link
-              className="text-xl tracking-tighter font-br-firma-medium hover:text-gray-500"
+              className="text-xl tracking-tighter font-br-firma-medium hover:text-gray-500 flex-grow"
               href={`/projects/${project.id}`}
             >
               {project.name}
-            </Link>
+            </Link>{" "}
+            <FontAwesomeIcon width={24} height={24} icon={faChevronRight} />
           </li>
         ))}
       </ul>
