@@ -20,7 +20,7 @@ const AboutMe = () => {
         <span
           onMouseEnter={mouseHover}
           onMouseLeave={mouseNotHovering}
-          className="hover:bg-black hover:text-white underline"
+          className="hover:bg-black hover:text-white underline cursor-pointer"
         >
           Daniel Adonis{" "}
           {ShowImage && (
@@ -29,11 +29,13 @@ const AboutMe = () => {
               height={500}
               alt="Image of Daniel Adonis"
               src={MyImage}
-              className="absolute top-24 left-24 mt-2 w-64 h-64 rounded-lg transition-opacity duration-300"
+              className={`absolute sm:top-24 md:top-36 sm:24 md:left-[480px] mt-2 w-64 h-64 rounded-lg ${
+                ShowImage ? "opacity-100" : "opacity-0"
+              } transition-all duration-300`}
             />
           )}
         </span>
-        , A Graphic Designer and a Web Developer.
+        , A Graphic Designer and a Frontend Web Developer.
       </h1>
       <p className="text-md font-br-firma-regular tracking-tight mt-2 text-gray-600">
         {/* I am a Graphic Designer and a Web Developer with a passion for creating
