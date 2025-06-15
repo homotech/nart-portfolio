@@ -1,6 +1,5 @@
 // "use client";
 import WebDesign from "../components/webDesign";
-import LogoSliders from "../components/logoSliders";
 import AboutMe from "../components/aboutMe";
 import GraphicDesign from "../components/graphicDesign";
 import GsapLogoSlider from "../components/gsapLogoSlider";
