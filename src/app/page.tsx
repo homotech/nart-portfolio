@@ -3,6 +3,8 @@ import WebDesign from "../components/webDesign";
 import LogoSliders from "../components/logoSliders";
 import AboutMe from "../components/aboutMe";
 import GraphicDesign from "../components/graphicDesign";
+import GsapLogoSlider from "../components/gsapLogoSlider";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -10,7 +12,15 @@ export default function Home() {
       <AboutMe />
       <GraphicDesign />
       <WebDesign />
-      <LogoSliders />
+      {/* <LogoSliders /> */}
+      <h1 className="text-2xl font-br-firma-medium tracking-tighter">
+        Here are some{" "}
+        <Link href="/logofolio" className="underline">
+          logos
+        </Link>{" "}
+        I have designed.
+      </h1>
+      <GsapLogoSlider />
     </div>
   );
 }
