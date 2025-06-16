@@ -1,10 +1,14 @@
-import Payaway from "@/public/Logos/Payaway.svg";
-import Omoeta from "@/public/Logos/omoeta.svg";
-import Tiqeasy from "@/public/Logos/tiqeasy.svg";
-import BOAA from "@/public/Logos/boaa.svg";
-import FiBeauty from "@/public/Logos/fi-beauty.svg";
-import WHomes from "@/public/Logos/w-homes.svg";
-import FHSA from "@/public/Logos/fhsa.svg";
+import Payaway from "@/src/assets/Logos/Payaway.svg";
+import Omoeta from "@/src/assets/Logos/omoeta.svg";
+import Tiqeasy from "@/src/assets/Logos/tiqeasy.svg";
+import BOAA from "@/src/assets/Logos/boaa.svg";
+import FiBeauty from "@/src/assets/Logos/fi-beauty.svg";
+import WHomes from "@/src/assets/Logos/w-homes.svg";
+import FHSA from "@/src/assets/Logos/fhsa.svg";
+import Arzel from "@/src/assets/Logos/arzel.svg";
+import Findar from "@/src/assets/Logos/findar.svg";
+import Kestrel from "@/src/assets/Logos/kestrel.svg";
+import Lavelle from "@/src/assets/Logos/lavelle.svg";
 const logos = [
   {
     name: "Payaway",
@@ -33,6 +37,22 @@ const logos = [
   {
     name: "FHSA",
     src: FHSA,
+  },
+  {
+    name: "Arzel",
+    src: Arzel,
+  },
+  {
+    name: "Findar",
+    src: Findar,
+  },
+  {
+    name: "Kestrel",
+    src: Kestrel,
+  },
+  {
+    name: "Lavelle",
+    src: Lavelle,
   },
 ];
 export default logos;

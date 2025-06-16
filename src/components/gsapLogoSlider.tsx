@@ -39,7 +39,7 @@ const GsapLogoSlider = () => {
       <div className="absolute bg-gradient-to-r inset-y-0 left-0 from-white to-transparent z-10 w-24" />
       <div className="absolute bg-gradient-to-l inset-y-0 right-0 from-white to-transparent z-10 w-24" />
       <div className="flex logo-track w-max gap-12">
-        {[...logos, ...logos, ...logos].map((logo, index) => (
+        {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
           <Image
             key={index}
             src={logo.src}

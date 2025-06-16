@@ -29,9 +29,7 @@ const AboutMe = () => {
               height={500}
               alt="Image of Daniel Adonis"
               src={MyImage}
-              className={`absolute sm:top-24 md:top-36 sm:24 md:left-[480px] mt-2 w-64 h-64 rounded-lg ${
-                ShowImage ? "opacity-100" : "opacity-0"
-              } transition-all duration-300`}
+              className="absolute sm:top-24 md:top-36 md:left-[480px] mt-2 w-64 h-64 rounded-lg  transition-all duration-300"
             />
           )}
         </span>
