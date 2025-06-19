@@ -7,14 +7,14 @@ const MyFiles = () => {
       <a
         href="/pdfs/Adonis Daniel Resume.pdf"
         download
-        className="text-black hover:bg-black hover:text-white border-2 border-black font-br-firma-regular text-lg flex items-center px-4 py-2 gap-4"
+        className="text-black hover:bg-black hover:text-white border-2 border-black font-br-firma-regular text-lg flex items-center px-4 py-2 gap-4 flex-grow"
       >
         <FontAwesomeIcon icon={faFilePdf} className="w-8 h-8" /> Resume
       </a>
       <a
         href="/pdfs/Adonis Daniel Portfolio.pdf"
         download
-        className="text-black hover:bg-black hover:text-white border-2 border-black font-br-firma-regular text-lg flex items-center px-4 py-2 gap-4"
+        className="text-black hover:bg-black hover:text-white border-2 border-black font-br-firma-regular text-lg flex items-center px-4 py-2 gap-4 flex-grow"
       >
         <FontAwesomeIcon icon={faFilePdf} className="w-8 h-8" /> Portfolio
       </a>

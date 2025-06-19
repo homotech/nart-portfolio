@@ -22,13 +22,13 @@ const WebDesign = () => {
             <div className="flex gap-4">
               <Link
                 href="https://homotech.github.io/quote-app/"
-                className="text-sm px-4 py-2 hover:bg-black hover:text-white font-br-firma-regular track-tighter"
+                className="text-sm px-4 py-2 hover:bg-black hover:text-white font-br-firma-regular track-tighter bg-gray-100"
               >
                 Live Demo
               </Link>
               <Link
                 href="https://github.com/homotech/quote-app.git"
-                className="text-sm px-4 py-2 hover:bg-black hover:text-white font-br-firma-regular track-tighter"
+                className="text-sm px-4 py-2 hover:bg-black hover:text-white font-br-firma-regular track-tighter bg-gray-100"
               >
                 Github Repo
               </Link>
