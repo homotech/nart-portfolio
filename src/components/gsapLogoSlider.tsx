@@ -32,7 +32,7 @@ const GsapLogoSlider = () => {
   return (
     <div
       ref={sliderRef}
-      className="overflow-hidden whitespace-nowrap py-6 relative w-full"
+      className="overflow-hidden whitespace-nowrap py-6 relative w-full invert"
       onMouseEnter={handlePause}
       onMouseLeave={handleResume}
     >

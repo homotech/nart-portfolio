@@ -30,8 +30,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="containers w-full ">
-          <header>
+        <div className="containers w-full">
+          <header className="relative">
             <Navbar />
           </header>
           <main>{children}</main>

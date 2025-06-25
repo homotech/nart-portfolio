@@ -2,6 +2,7 @@
 import { useState } from "react";
 import MyImage from "@/public/profile-picture.webp";
 import Image from "next/image";
+import MyFiles from "./myFiles";
 
 const AboutMe = () => {
   const [ShowImage, setShowImage] = useState(false);
@@ -14,8 +15,8 @@ const AboutMe = () => {
     console.log("Mouse Enter");
   };
   return (
-    <div className="mb-4">
-      <h1 className="text-3xl font-br-firma-regular tracking-tighter">
+    <div className="mb-8 px-4">
+      <h1 className="text-3xl font-br-firma-regular tracking-tighter mb-5">
         Hi I&apos;m{" "}
         <span
           onMouseEnter={mouseHover}
@@ -35,7 +36,7 @@ const AboutMe = () => {
         </span>
         , A Graphic Designer and a Frontend Web Developer.
       </h1>
-      <p className="text-md font-br-firma-regular tracking-tight mt-2 text-gray-600">
+      <p className="text-md font-br-firma-regular tracking-tight mb-5 text-gray-600">
         {/* I am a Graphic Designer and a Web Developer with a passion for creating
         visually stunning and user-friendly digital experiences. My expertise
         lies in crafting unique brand identities, designing engaging websites,
@@ -50,6 +51,7 @@ const AboutMe = () => {
         chance I get, which makes me an asset to friends, family, and my
         clients.
       </p>
+      <MyFiles />
     </div>
   );
 };

@@ -5,23 +5,16 @@ import GraphicDesign from "../components/graphicDesign";
 import GsapLogoSlider from "../components/gsapLogoSlider";
 import Link from "next/link";
 import MyFiles from "../components/myFiles";
+import LogoDesigned from "../components/logosDesigned";
 
 export default function Home() {
   return (
-    <div className="overflow-hidden mt-20 px-4 py-2 md:py-4 md:px-16">
+    <div className="overflow-hidden mt-20 py-2 md:py-4 md:px-16">
       <AboutMe />
       <GraphicDesign />
       <WebDesign />
-      {/* <LogoSliders /> */}
-      <h1 className="text-2xl font-br-firma-medium tracking-tighter">
-        Here are some{" "}
-        <Link href="/logofolio" className="underline">
-          logos
-        </Link>{" "}
-        I have designed.
-      </h1>
-      <GsapLogoSlider />
-      <MyFiles />
+      <LogoDesigned />
+      {/* <MyFiles /> */}
     </div>
   );
 }
