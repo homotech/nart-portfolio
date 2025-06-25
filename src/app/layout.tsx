@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 import Navbar from "../components/navbar";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import Footer from "../components/footer";
@@ -30,9 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="containers w-full">
-          <header className="relative">
-            <Navbar />
+        <div className="w-full">
+          <header className="fixed h-16 top-0 left-0 w-full z-10 px-4 py-4 text-xl text-center font-br-firma-medium tracking-tighter bg-white border-b-2 border-gray-800">
+            <Link href="/" className="">
+              Daniel Adonis
+            </Link>
+            {/* <Navbar /> */}
           </header>
           <main>{children}</main>
           <Footer />
