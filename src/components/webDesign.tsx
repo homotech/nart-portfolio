@@ -1,19 +1,18 @@
 // "use client";
-import {
-  faArrowLeft,
-  faArrowRight,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import WebProjects from "@/src/data/webprojects";
 import Link from "next/link";
 
 const WebDesign = () => {
+  // styles for buttons
   const buttonClass =
     "text-md px-4 py-2 w-40 h-12 bg-black text-white hover:mt-[-8px] hover:ml-[8px] border-2 border-black transition-all duration-150 font-br-firma-regular track-tighter flex items-center gap-4";
   const borderedClass =
     "w-40 h-12 border-2 bg-white border-black left-0 absolute z-[-1]";
+
+  // beginning of the return code
   return (
     <div className="mb-8 px-4">
       <h1 className="text-4xl font-br-firma-regular tracking-tighter mb-4">
@@ -37,7 +36,6 @@ const WebDesign = () => {
               <p className=" text-lg font-br-firma-regular">
                 {project.projectDescription}
               </p>
-              {/* <FontAwesomeIcon width={24} height={24} icon={faChevronRight} /> */}
               <div className="flex gap-4">
                 <Link href={project.liveDemo} className={buttonClass}>
                   Live Demo{" "}

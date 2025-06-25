@@ -2,8 +2,8 @@ import Link from "next/link";
 import GsapLogoSlider from "./gsapLogoSlider";
 const LogoDesigned = () => {
   return (
-    <div className="bg-black px-4 py-4">
-      <h1 className="text-4xl font-br-firma-regular tracking-tighter invert">
+    <div className="bg-[#111111] px-4 py-4">
+      <h1 className="text-4xl font-br-firma-regular tracking-tighter text-white">
         Here are some{" "}
         <Link href="/logofolio" className="underline">
           logos

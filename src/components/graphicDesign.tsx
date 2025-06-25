@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const GraphicDesign = () => {
   return (
     <div className="mb-8 px-4">
-      <h1 className="text-3xl font-br-firma-regular tracking-tighter mb-2 underline">
+      <h1 className="text-4xl font-br-firma-regular tracking-tighter mb-4">
         Design Projects({projects.length})
       </h1>
       <ul>

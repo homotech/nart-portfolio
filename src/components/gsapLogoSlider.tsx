@@ -32,13 +32,13 @@ const GsapLogoSlider = () => {
   return (
     <div
       ref={sliderRef}
-      className="overflow-hidden whitespace-nowrap py-6 relative w-full invert"
+      className="overflow-hidden whitespace-nowrap py-6 relative w-full"
       onMouseEnter={handlePause}
       onMouseLeave={handleResume}
     >
-      <div className="absolute bg-gradient-to-r inset-y-0 left-0 from-white to-transparent z-10 w-24" />
-      <div className="absolute bg-gradient-to-l inset-y-0 right-0 from-white to-transparent z-10 w-24" />
-      <div className="flex logo-track w-max gap-12">
+      <div className="absolute bg-gradient-to-r inset-y-0 left-0 from-[#111111] to-transparent z-10 w-24" />
+      <div className="absolute bg-gradient-to-l inset-y-0 right-0 from-[#111111] to-transparent z-10 w-24" />
+      <div className="flex logo-track w-max gap-12 invert">
         {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
           <Image
             key={index}

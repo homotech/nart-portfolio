@@ -2,9 +2,6 @@
 import WebDesign from "../components/webDesign";
 import AboutMe from "../components/aboutMe";
 import GraphicDesign from "../components/graphicDesign";
-import GsapLogoSlider from "../components/gsapLogoSlider";
-import Link from "next/link";
-import MyFiles from "../components/myFiles";
 import LogoDesigned from "../components/logosDesigned";
 
 export default function Home() {
