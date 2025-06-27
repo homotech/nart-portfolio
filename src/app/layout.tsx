@@ -27,16 +27,19 @@ export default function RootLayout({
 }>) {
   const router = useRouter();
   const pathname = usePathname();
-  // const usesearchparams = useSearchParams();
   return (
     <html lang="en">
+      <meta
+        name="google-site-verification"
+        content="JLGk6QBOAu-z9k7rE8zQGlFs1x6ifroL5fVXGRzmVQM"
+      />
+      <head></head>
       <body className={inter.className}>
         <div className="w-full">
           <header className="fixed h-16 top-0 left-0 w-full z-10 px-4 py-4 text-xl text-center font-br-firma-medium tracking-tighter bg-white border-b-2 border-gray-800">
             <Link href="/" className="">
               Daniel Adonis
             </Link>
-            {/* <Navbar /> */}
           </header>
           <main>{children}</main>
           <Footer />
